@@ -28,22 +28,22 @@ layout: layouts/layout.html
     class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
   >
     <div class="order-last flex-1 md:order-first">
-      <h2 class="text-3xl font-bold md:text-4xl mb-4">Projects</h2>
+      {% render 'components/section-header-component.liquid', title: "Projects" %}
 
-      {% render 'components/project-component.html',
+      {% render 'components/project-component.liquid',
         title: 'weenix',
         description: 'I built an operating system kernel in C, implementing low
       level subsystems such as processes and threads, a virtual filesystem, and
       virtual memory with paging and pagefault handling.',
         img_src: '/assets/images/projects/weenix-sq.png',
-        tags: 'C | Unix/Linux',
+        tags: "C,Unix/Linux",
         github: 'http://www.example.com',
         demo: 'http://www.ntharani.com'
       %}
 
 
 
-      {% render 'components/project-component.html',
+      {% render 'components/project-component.liquid',
         title: 'animated sudoku',
         description: "I found two things interesting while making this basic
       Sudoku web app. 1) Generating Sudoku puzzles guaranteed to have a single
@@ -52,13 +52,13 @@ layout: layouts/layout.html
       animates the backtracking algorithm used to solve the puzzle, and it's
       cool how the time taken to solve has such high variance. ",
         img_src: '/assets/images/projects/sudoku.gif',
-        tags: 'Python (Flask) | JavaScript',
+        tags: "Python (Flask),JavaScript",
         github: 'http://www.example.com',
         demo: 'http://www.ntharani.com'
       %}
     </div>
     <div class="order-first flex-1 md:order-last">
-      <h2 class="text-3xl font-bold md:text-4xl">Blog Posts</h2>
+      {% render 'components/section-header-component.liquid', title: "Blog Posts" %}
       {% for post in collections.post %}
         <h2 class="text-2xl text-red-900">{{ post.data.title }}</h2>
         <p>{{ post.content }}</p>
@@ -69,10 +69,10 @@ layout: layouts/layout.html
     class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
   >
     <div class="flex-1">
-      <h2 class="text-3xl font-bold md:text-4xl">Experience</h2>
+      {% render 'components/section-header-component.liquid', title: "Experience" %}
     </div>
     <div class="flex-1">
-      <h2 class="text-3xl font-bold md:text-4xl">About Me</h2>
+      {% render 'components/section-header-component.liquid', title: "About Me" %}
     </div>
   </div>
 </section>
