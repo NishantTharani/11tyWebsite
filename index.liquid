@@ -1,0 +1,80 @@
+---
+layout: layouts/layout.html
+---
+{% comment %} {% include 'sections/hero.html' %} {% endcomment %}
+
+<div class="container mx-auto px-4">
+
+<section>
+  <div
+    class="mx-auto flex max-w-5xl flex-col items-center gap-12 py-6 md:flex-row md:py-12"
+  >
+    <img src="/assets/images/me.png" alt="" class="max-h-[20rem]">
+    <div>
+      <h1 class="text-4xl font-bold leading-[1.1] md:text-5xl">Hi, I'm Nish</h1>
+      <p class="pt-4 text-lg leading-[1.5]">
+        I'm a Computer Science Masters student at the University of Southern California, in the Honors Program. I came
+        to CS after initially studying Economics, and I've developed a love for computers while retaining the 'soul of
+        an economist' (sorry). I've enjoyed working on many tough engineering problems, from designing machine learning
+        experiments to implementing distributed key-value databases. However, I remain unenthused by graphics stuff (for
+        now).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div
+    class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
+  >
+    <div class="order-last flex-1 md:order-first">
+      <h2 class="text-3xl font-bold md:text-4xl mb-4">Projects</h2>
+
+      {% render 'components/project-component.html',
+        title: 'weenix',
+        description: 'I built an operating system kernel in C, implementing low
+      level subsystems such as processes and threads, a virtual filesystem, and
+      virtual memory with paging and pagefault handling.',
+        img_src: '/assets/images/projects/weenix-sq.png',
+        tags: 'C | Unix/Linux',
+        github: 'http://www.example.com',
+        demo: 'http://www.ntharani.com'
+      %}
+
+
+
+      {% render 'components/project-component.html',
+        title: 'animated sudoku',
+        description: "I found two things interesting while making this basic
+      Sudoku web app. 1) Generating Sudoku puzzles guaranteed to have a single
+      unique solution, which I did by generating a random solved grid and then
+      clearing cells one by one, making sure a unique solution remained. 2) It
+      animates the backtracking algorithm used to solve the puzzle, and it's
+      cool how the time taken to solve has such high variance. ",
+        img_src: '/assets/images/projects/sudoku.gif',
+        tags: 'Python (Flask) | JavaScript',
+        github: 'http://www.example.com',
+        demo: 'http://www.ntharani.com'
+      %}
+    </div>
+    <div class="order-first flex-1 md:order-last">
+      <h2 class="text-3xl font-bold md:text-4xl">Blog Posts</h2>
+      {% for post in collections.post %}
+        <h2 class="text-2xl text-red-900">{{ post.data.title }}</h2>
+        <p>{{ post.content }}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div
+    class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
+  >
+    <div class="flex-1">
+      <h2 class="text-3xl font-bold md:text-4xl">Experience</h2>
+    </div>
+    <div class="flex-1">
+      <h2 class="text-3xl font-bold md:text-4xl">About Me</h2>
+    </div>
+  </div>
+</section>
+
+</div>
