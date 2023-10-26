@@ -7,11 +7,11 @@ layout: layouts/layout.html
 
 <section>
   <div
-    class="mx-auto flex max-w-5xl flex-col items-center gap-12 py-6 md:flex-row md:py-12"
+    class="mx-auto flex max-w-5xl flex-col items-center gap-12 py-6 md:flex-row md:py-12 md:space-x-8"
   >
-    <img src="/assets/images/me.png" alt="" class="max-h-[20rem]">
+    <img src="/assets/images/me.png" alt="" class="max-h-[20rem] rounded-lg">
     <div>
-      <h1 class="text-4xl font-bold leading-[1.1] md:text-5xl font-alata">Hi, I'm Nish</h1>
+      <h1 class="text-6xl font-bold leading-[1.1] md:text-5xl font-alata mb-4">Hi, I'm Nish</h1>
       <p class="pt-4 text-base leading-8 font-alata font-light text-text-light opacity-80">
         I'm a Computer Science Masters student at the University of Southern California, in the Honors Program. I came
         to CS after initially studying Economics, and I've developed a love for computers while retaining the 'soul of
@@ -25,7 +25,7 @@ layout: layouts/layout.html
 
 <section>
   <div
-    class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
+    class="mx-auto mt-12 mb-6 flex flex-col space-y-6 md:flex-row md:space-x-36 md:space-y-0"
   >
     <div class="order-last flex-1 md:order-first">
       {% render 'components/section-header-component.liquid', title: "Projects" %}
@@ -66,7 +66,7 @@ layout: layouts/layout.html
     </div>
   </div>
   <div
-    class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0"
+    class="mx-auto mt-6 flex flex-col space-y-6 md:flex-row md:space-x-36 md:space-y-0"
   >
     <div class="flex-1">
       {% render 'components/section-header-component.liquid', title: "Experience" %}
