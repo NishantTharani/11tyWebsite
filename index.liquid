@@ -13,11 +13,7 @@ layout: layouts/layout.html
     <div>
       <h1 class="text-6xl font-bold leading-[1.1] md:text-5xl font-alata mb-4">Hi, I'm Nish</h1>
       <p class="pt-4 text-base leading-8 font-alata font-light text-text-light opacity-80">
-        I'm a Computer Science Masters student at the University of Southern California, in the Honors Program. I came
-        to CS after initially studying Economics, and I've developed a love for computers while retaining the 'soul of
-        an economist' (sorry). I've enjoyed working on many tough engineering problems, from designing machine learning
-        experiments to implementing distributed key-value databases. However, I remain unenthused by graphics stuff (for
-        now).
+        I'm a Computer Science Masters student at the University of Southern California, in the Honors Program. I've enjoyed working on many tough engineering problems - from designing machine learning experiments, to implementing distributed key-value databases, and building full-stack web applications. I'm as excited about building great products as I am about low-level systems engineering.
       </p>
     </div>
   </div>
@@ -50,7 +46,7 @@ layout: layouts/layout.html
       unique solution, which I did by generating a random solved grid and then
       clearing cells one by one, making sure a unique solution remained. 2) It
       animates the backtracking algorithm used to solve the puzzle, and it's
-      cool how the time taken to solve has such high variance. ",
+      cool to see how the time taken to solve has such high variance. ",
         img_src: '/assets/images/projects/sudoku.gif',
         tags: "Python (Flask),JavaScript",
         github: 'http://www.example.com',
@@ -70,9 +66,25 @@ layout: layouts/layout.html
   >
     <div class="flex-1">
       {% render 'components/section-header-component.liquid', title: "Experience" %}
+
+      {% render 'components/experience-component.liquid',
+        forwho: 'Information Sciences Institute (VIMAL Lab)',
+        dates: 'Jan 2022 - Aug 2022',
+        role: 'Student Researcher',
+        description_top: 'I worked on multiple DARPA-sponsored projects as an AI researcher in the field of computer vision. Some stuff I did:',
+        description_list: 'Researched the development of deep computer vision models that are robust to adversarial attacks.|
+        Built a machine learning pipeline to protect images of faces from biometric scraping, with imperceptible changes to the images.|
+        Improved research efficiency by developing modular and reusable components that integrate with PyTorch.',
+      %}
     </div>
     <div class="flex-1">
       {% render 'components/section-header-component.liquid', title: "About Me" %}
+
+      {% render 'components/aboutme-component.liquid',
+      aboutme: "ASL?|
+      [Redacted], M, Los Angeles||
+      "
+    %}
     </div>
   </div>
 </section>

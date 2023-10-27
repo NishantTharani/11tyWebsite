@@ -1,0 +1,21 @@
+{% assign aboutme_list = aboutme | split: '||' %}
+
+<div class="flex flex-col space-x-2 my-4 bg-secondary-light rounded-lg p-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 md:gap-y-4">
+    {% for aboutme_item in aboutme_list %}
+      {% assign aboutme_item_list = aboutme_item | split: '|' %}
+      {% capture formatted_aboutme_header %}
+            {{ aboutme_item_list[0] | replace: "~~", '<s>' | replace: "==", '</s>'}}
+        {% endcapture %}
+      <div class="text-gray-900 font-semibold md:col-span-1 text-sm">{{ formatted_aboutme_header }}</div>
+      {% capture formatted_aboutme_content %}
+            {{ aboutme_item_list[1] | replace: "~~", '<s>' | replace: "\~~", '</s>' }}
+        {% endcapture %}
+      <div class="text-gray-600 md:col-span-2 text-sm">{{ formatted_aboutme_content }}</div>
+    {% endfor %}
+    <div class="text-gray-900 font-semibold md:col-span-1 text-sm pt-2">Contact info</div>
+    <div class="text-gray-600 md:col-span-2 text-sm">
+      <img src="/assets/images/email.png" alt="My email address" class="h-8">
+    </div>
+  </div>
+</div>

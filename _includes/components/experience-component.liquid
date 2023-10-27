@@ -1,0 +1,23 @@
+{% if description_list %}
+  {% assign description_list_array = description_list | split: '|' %}
+{% endif %}
+
+<div class="flex flex-col space-y-2 my-4 bg-secondary-light rounded-lg p-4">
+  <div class="flex">
+    <h3 class="text-xl font-semibold text-gray-900">{{ forwho }}</h3>
+    <span class="ml-auto text-sm text-end">{{ dates }}</span>
+  </div>
+  <p class="text-gray-900 text-md font-semibold">{{ role }}</p>
+  <p class="text-gray-600 text-sm">
+    {{ description_top }}
+    {% if description_list %}
+      <ul class="list-disc list-outside pl-8 text-gray-600 text-sm">
+        {% for description_list_item in description_list_array %}
+          <li class="">
+            {{ description_list_item }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </p>
+</div>
