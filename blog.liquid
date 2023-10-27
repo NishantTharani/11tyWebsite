@@ -5,12 +5,30 @@ layout: layouts/layout.html
   <div class="flex flex-col md:flex-row">
     <div class="flex flex-col mr-24">
       <h1 class="text-6xl font-bold leading-[1.1] md:text-5xl font-alata mb-4">Blog</h1>
-      <p class="pt-4 text-base leading-8 font-light text-gray-900 opacity-90">
+      <p class="pt-4 text-base leading-8 font-light text-gray-900 opacity-90 mb-12">
         This is where I (plan to) write about stuff. I'll have more to say here once I've actually written something.
       </p>
+      {% assign postslist = collections.post | reverse %}
+      {% for post in postslist %}
+        {% render 'components/blogpost-component.liquid',
+          url: post.url,
+          title: post.data.title,
+          date: post.date,
+          tags: post.data.tags
+        %}
+      {% endfor %}
     </div>
     <div class="md:w-48 flex flex-col">
       <h1 class="text-6xl font-bold leading-[1.1] md:text-5xl font-alata mb-4 text-slate-500">Tags</h1>
+      {% assign tagslist = collections.all | getAllTags | filterTagList %}
+      <ul class="md:mt-24">
+        {% for tag in tagslist %}
+          {% comment %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %} {% endcomment %}
+          <li class="mb-4">
+            <a href="/tags/{{ tag }}" class="text-slate-500">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>

@@ -1,0 +1,21 @@
+---
+layout: layouts/layout.html
+---
+<div class="container mx-auto px-24 pt-24 mb-12">
+  <h1 class="text-5xl font-bold mb-4">{{ title }}</h1>
+
+  <div class="mb-12">
+    <time class="text-md opacity-80 mr-8" datetime="{{ date | htmlDateString }}">
+      {{ date | readableDate }}
+    </time>
+    {% assign filteredTags = tags | filterTagList %}
+    {% for tag in filteredTags %}
+      <span class="text-sm text-slate-600"
+        >#{{ tag }}
+        {% unless forloop.last %} | {% endunless %}
+      </span>
+    {% endfor %}
+  </div>
+
+  {{ content }}
+</div>

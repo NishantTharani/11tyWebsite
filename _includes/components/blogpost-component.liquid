@@ -1,0 +1,24 @@
+{% assign filteredTags = tags | filterTagList %}
+
+<div class="mb-4">
+  <div>
+    <a href="{{ url }}" class="text-lg text-gray-900">
+      {{ title }}
+    </a>
+  </div>
+  <div class="flex flex-row">
+    <div class="w-40 flex-none">
+      <time class="text-sm opacity-80" datetime="{{ post.date | htmlDateString }}">
+        {{- date | readableDate: 'LLLL yyyy' -}}
+      </time>
+    </div>
+    <div>
+      {% for tag in filteredTags %}
+        <span class="text-sm text-slate-600 opacity-60"
+          >#{{ tag }}
+          {% unless forloop.last %} | {% endunless %}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
