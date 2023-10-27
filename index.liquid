@@ -30,15 +30,14 @@ numberOfLatestPostsToShowInWords: Two
       <div class="order-last flex-1 md:order-first">
         {% render 'components/section-header-component.liquid', title: 'Projects' %}
 
-        {% render 'components/project-component.liquid',
+        {%
+          render 'components/project-component.liquid',
           title: 'weenix',
           description: 'I built an operating system kernel in C, implementing low
-      level subsystems such as processes and threads, a virtual filesystem, and
-      virtual memory with paging and pagefault handling.',
+          level subsystems such as processes and threads, a virtual filesystem, and
+          virtual memory with paging and pagefault handling.',
           img_src: '/assets/images/projects/weenix-sq.png',
           tags: 'C,Unix/Linux',
-          github: 'http://www.example.com',
-          demo: 'http://www.ntharani.com'
         %}
 
         {% render 'components/project-component.liquid',
@@ -51,8 +50,17 @@ numberOfLatestPostsToShowInWords: Two
       cool to see how the time taken to solve has such high variance. ",
           img_src: '/assets/images/projects/sudoku.gif',
           tags: 'Python (Flask),JavaScript',
-          github: 'http://www.example.com',
+          github: 'https://github.com/NishantTharani/sudoku',
           demo: 'http://www.ntharani.com'
+        %}
+
+        {%
+          render 'components/project-component.liquid',
+          title: 'tiny niSh',
+          description: "A simple shell written in C.",
+          img_src: '/assets/images/projects/tinynish.gif',
+          tags: 'C,Unix/Linux',
+          github: 'https://github.com/NishantTharani/tinyniSh',
         %}
       </div>
       <div class="order-first flex-1 md:order-last">
@@ -69,6 +77,23 @@ numberOfLatestPostsToShowInWords: Two
     >
       <div class="flex-1">
         {% render 'components/section-header-component.liquid', title: 'Experience' %}
+
+        {%
+          render 'components/experience-component.liquid',
+          forwho: 'DoorDash',
+          dates: 'May 2023 - Aug 2023',
+          role: 'Software Engineer Intern',
+          description_top: "At DoorDash I developed the next version of a customer-facing tool used over 2.8 million times per month. I participated in the back-end design process and then implemented functionality over the full stack, by writing new gRPC back-end endpoints in Kotlin and NodeJS, and translating UX designs to React front-end code. At the end I presented a live (working) demo to hundreds of coworkers including senior leadership.
+          ",
+        %}
+
+        {%
+          render 'components/experience-component.liquid',
+          forwho: 'University of Southern California',
+          dates: 'Jan 2023 - May 2023, Aug 2023 - Present',
+          role: 'Teaching Assistant',
+          description_top: "As a TA for CSCI 353 ('Introduction to Internetworking'), I lead office hours for a class of over 100 students, where I help students with debugging C++ multithreaded networking code.",
+        %}
 
         {%
           render 'components/experience-component.liquid',
