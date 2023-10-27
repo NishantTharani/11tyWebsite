@@ -24,8 +24,9 @@ layout: layouts/layout.html
       <ul class="md:mt-24">
         {% for tag in tagslist %}
           {% comment %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %} {% endcomment %}
+          {% assign tagSlugified = tag | slugify %}
           <li class="mb-4">
-            <a href="/tags/{{ tag }}" class="text-slate-500">{{ tag }}</a>
+            <a href="/tags/{{ tagSlugified}}" class="text-slate-500">{{ tag }}</a>
           </li>
         {% endfor %}
       </ul>

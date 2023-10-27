@@ -60,8 +60,7 @@ numberOfLatestPostsToShowInWords: Two
         {% render 'components/section-header-component.liquid', title: blogPostsTitle %}
         {% assign postsToShow = collections.post | head: numberOfLatestPostsToShow | reverse %}
         {% for post in postsToShow %}
-          <h2 class="text-2xl text-red-900">{{ post.data.title }}</h2>
-          <p>{{ post.content }}</p>
+          {% render 'components/homepage-blogpost-component.liquid', post: post %}
         {% endfor %}
       </div>
     </div>
