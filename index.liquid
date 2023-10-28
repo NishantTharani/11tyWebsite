@@ -30,6 +30,14 @@ numberOfLatestPostsToShowInWords: Two
       <div class="order-last flex-1 md:order-first">
         {% render 'components/section-header-component.liquid', title: 'Projects' %}
 
+        {% render 'components/project-component.liquid',
+          title: 'yelp business search',
+          description: 'A responsive full stack web app to search for businesses using the Yelp API and view their details.',
+          img_src: '/assets/images/projects/yelp.jpg',
+          tags: 'NodeJS, React, Bootstrap',
+          video_demo: 'https://github.com/NishantTharani/YelpBusinessSearch/'
+        %}
+
         {%
           render 'components/project-component.liquid',
           title: 'weenix',
