@@ -44,9 +44,15 @@
       media="all"
       onload="this.media='all'"
     />
+
+    <!-- PrismJS Themes -->
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
   </head>
 
-  <body class="bg-body-bg-light flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col bg-body-bg-light">
     {% render 'partials/_header.html' %} {{ content }} {% render
     'partials/_footer.html' %}
   </body>

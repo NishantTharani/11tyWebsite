@@ -64,7 +64,8 @@ numberOfLatestPostsToShowInWords: Two
         %}
       </div>
       <div class="order-first flex-1 md:order-last">
-        {% assign blogPostsTitle = numberOfLatestPostsToShowInWords | append: ' Recent Blog Posts' %}
+        {% comment %} {% assign blogPostsTitle = numberOfLatestPostsToShowInWords | append: ' Recent Blog Posts' %} {% endcomment %}
+        {% assign blogPostsTitle = 'Recent Blog Posts' %}
         {% render 'components/section-header-component.liquid', title: blogPostsTitle %}
         {% assign postsToShow = collections.post | head: numberOfLatestPostsToShow | reverse %}
         {% for post in postsToShow %}
